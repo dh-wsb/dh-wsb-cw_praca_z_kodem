@@ -9,7 +9,7 @@ jobs:
     Pylint:
         runs-on: ubuntu-latest
         steps:
-            - run: pip install -r "requirements.txt"
+            - run: pip install -r "/dh-wsb-cw_praca_z_kodem/requirements.txt"
             - run: pylint /dh-wsb-cw_praca_z_kodem/app.py
     AppImage:
         runs-on: ubuntu-latest
