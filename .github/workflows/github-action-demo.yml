@@ -9,10 +9,10 @@ jobs:
     Pylint:
         runs-on: ubuntu-latest
         steps:
-            - run: pip install pylint
-            - run: pylint ../../app.py
+            - run: pip install -r requirements.txt
+            - run: pylint app.py
     AppImage:
         runs-on: ubuntu-latest
         steps:
-            - run: docker build --tag test-flask-app .
+            - run: docker build --tag test-flask-app dh-wsb-cw_praca_z_kodem.git
             - run: docker run -d -p 5000:5000 test-flask-app
