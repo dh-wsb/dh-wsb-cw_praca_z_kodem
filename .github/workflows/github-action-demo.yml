@@ -5,17 +5,18 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Wersja Dockera
-            run: docker --version
+            - run: docker --version
             - name: Wersja Pythona
-            run: python --version 
+            - run: python --version 
     Pylint:
         runs-on: ubuntu-latest
         steps:
             - name: Sprawdzenie pylint
-            run: pylint app.py
+            - run: pip install pylint
+            - run: pylint app.py
     AppImage:
         runs-on: ubuntu-latest
         steps:
             - name: Budowanie obrazu aplikacji
-            run: docker build --tag test-flask-app .
-            run: docker run -d -p 5000:5000 test-flask-app
+            - run: docker build --tag test-flask-app .
+            - run: docker run -d -p 5000:5000 test-flask-app
